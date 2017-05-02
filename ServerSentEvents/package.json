@@ -1,0 +1,15 @@
+{
+  "name": "ServerSentEvents",
+  "version": "1.0.0",
+  "description": "Sample node web application to demonstrate Server Sent Events (html5) ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sse": "0.0.6"
+  }
+}

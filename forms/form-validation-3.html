@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form validation 3 constrained</title>
+  <script>
+    function validateInput() {
+      var bool1 = document.getElementById('handbook1').validity.customError;
+      var result1 = document.getElementById('result1').innerHTML = bool1;
+    }
+  </script>
+</head>
+<body>
+<input type="text" id="handbook1">
+<div>
+  <label>Result1:</label>
+  <output id="result1"></output>
+</div>
+<input type="button" value="Validate" onclick="validateInput()">
+</body>
+</html>

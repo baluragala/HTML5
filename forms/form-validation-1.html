@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Validation - 1</title>
+  <script>
+    function validateField() {
+      var x = document.forms["Field"]["fname"].value;
+      if (x == null || x == "") {
+        alert("Please enter your name");
+        return false;
+      }
+    }
+  </script>
+</head>
+<body>
+<!-- validation using JS -->
+<form name="Field" onsubmit="validateField()" method="post">
+  First name: <input type="text" name="fname">
+  <input type="submit" value="Submit">
+</form>
+</html>

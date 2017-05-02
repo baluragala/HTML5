@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form validation 6</title>
+</head>
+<script>
+  function validateInput() {
+    var bool1 = document.getElementById('handbook1').willValidate; //true
+    var bool2 = document.getElementById('handbook2').willValidate; //undefined
+    var bool3 = document.getElementById('handbook3').willValidate; //false
+    var result1 = document.getElementById('result1').innerHTML = bool1;
+    var result2 = document.getElementById('result2').innerHTML = bool2;
+    var result3 = document.getElementById('result3').innerHTML = bool3;
+  }
+</script>
+<body>
+<input type="text" id="handbook1" required value="handbook">
+<div id="handbook2" type="text">
+  <input type="text" id="handbook3" disabled>
+  <div>
+    <label>Result1:</label>
+    <output id="result1"></output>
+  </div>
+  <div>
+    <label>Result2:</label>
+    <output id="result2"></output>
+  </div>
+  <div>
+    <label>Result3:</label>
+    <output id="result3"></output>
+  </div>
+  <input type="button" value="Validate" onclick="validateInput()">
+</body>
+
+</body>
+</html>

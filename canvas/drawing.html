@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Drawing With Canvas</title>
+</head>
+<body>
+<canvas id="lineCanvas" width="200" height="100" style="border:1px solid #000000;">
+</canvas>
+<canvas id="circleCanvas" width="200" height="100" style="border:1px solid #000000;">
+</canvas>
+<canvas id="textCanvas" width="200" height="100" style="border:1px solid #000000;">
+</canvas>
+<script>
+  var c = document.getElementById("lineCanvas");
+  var ctx = c.getContext("2d");
+  ctx.moveTo(0,0);
+  ctx.lineTo(200,100);
+  ctx.stroke();
+
+  var c1 = document.getElementById("circleCanvas");
+  var ctx1 = c1.getContext("2d");
+  ctx1.beginPath();
+  ctx1.arc(95,50,40,0,2*Math.PI);
+  ctx1.stroke();
+
+  var c = document.getElementById("textCanvas");
+  var ctx = c.getContext("2d");
+  ctx.font = "30px Arial";
+  ctx.fillText("Hello Zeo",10,50);
+
+</script>
+</body>
+</html>

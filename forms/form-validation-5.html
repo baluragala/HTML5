@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form validation 5 constrained</title>
+</head>
+<body>
+<script>
+  function check(input) {
+    if (input.value != document.getElementById('email_addr').value) {
+      input.setCustomValidity('Both the email addresses must match.');
+    }
+    else {
+      input.setCustomValidity('');
+    }
+  }
+</script>
+<form id="myForm">
+  <div>
+    <label>Enter Email Address:</label>
+    <input type="email" id="email_addr" name="email_addr">
+  </div>
+  <div>
+    <label>Repeat Email Address:</label>
+    <input type="email" id="email_addr_repeat" name="email_addr_repeat">
+  </div>
+  <input type="submit" value="Validate" onclick="check(this)">
+</form>
+</body>
+</html>
