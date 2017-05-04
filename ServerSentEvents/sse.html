@@ -3,18 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>SSE Example</title>
+  <script type="text/javascript">
+    var source = new EventSource('http://localhost:3000');
+    source.onmessage = function (event) {
+      alert(event.data);
+    };
+  </script>
 </head>
 <body>
-
-
-<div id="sse">
-  <eventsource src="http://localhost:8080/sse"/>
-</div>
-
-<div id="ticker">
-
-</div>
-
 
 </body>
 </html>

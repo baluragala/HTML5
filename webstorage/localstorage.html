@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Webstorage - Local Storage</title>
+</head>
+<body>
+<label>Key:<input type="text" id="key"></label>
+<label>Value:<input type="text" id="value"></label>
+<button onclick="setData()">Set</button>
+<button onclick="getData()">Get</button>
+<output id="result">
+
+</output>
+<script>
+
+  function getData() {
+    if (typeof(Storage) !== "undefined") {
+      console.log(localStorage.getItem(document.getElementById("key")));
+      // Retrieve
+      document.getElementById("value").value = localStorage.getItem(document.getElementById("key").value);
+    } else {
+      document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+    }
+  }
+
+  function setData() {
+    if (typeof(Storage) !== "undefined") {
+      // Store
+      localStorage.setItem(document.getElementById("key").value, document.getElementById("value").value);
+      // Retrieve
+      document.getElementById("result").innerHTML = localStorage.getItem(document.getElementById("key").value);
+    } else {
+      document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+    }
+  }
+</script>
+</body>
+</html>

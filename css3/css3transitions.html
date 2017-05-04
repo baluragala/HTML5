@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS3 Transformations</title>
+  <style>
+
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: violet;
+      -webkit-transition: width 2s; /* Safari */
+      transition: width 2s;
+    }
+
+    div:hover {
+      width: 300px;
+    }
+
+    #linear {
+      background: indigo;
+      -webkit-transition-timing-function: linear;
+    }
+
+    #ease {
+      background: blue;
+      transition-timing-function: ease;
+    }
+
+    #easein {
+      background: green;
+      transition-timing-function: ease-in;
+    }
+
+    #easeout {
+      background: orange;
+      transition-timing-function: ease-out;
+    }
+
+    #easeinout {
+      background: red;
+      transition-timing-function: ease-in-out;
+    }
+
+
+  </style>
+</head>
+<body>
+
+<div id="info">
+</div>
+
+<div id="linear">
+</div>
+<div id="ease">
+</div>
+<div id="easein">
+</div>
+<div id="easeout">
+</div>
+<div id="easeinout">
+</div>
+
+
+</body>
+</html>

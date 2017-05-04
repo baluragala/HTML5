@@ -1,0 +1,150 @@
+#p1 {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+/* red with opacity */
+#p2 {
+  background-color: rgba(0, 255, 0, 0.3);
+}
+
+/* green with opacity */
+#p3 {
+  background-color: rgba(0, 0, 255, 0.3);
+}
+
+/* blue with opacity */
+#p4 {
+  background-color: hsla(120, 100%, 50%, 0.3);
+}
+
+/* green with opacity */
+#p5 {
+  background-color: hsla(120, 100%, 75%, 0.3);
+}
+
+/* light green with opacity */
+#p6 {
+  background-color: hsla(120, 100%, 25%, 0.3);
+}
+
+/* dark green with opacity */
+#p7 {
+  background-color: hsla(120, 60%, 70%, 0.3);
+}
+
+/* pastel green with opacity */
+
+#grad1 {
+  height: 100px;
+  background: green; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(green, yellow); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(green, yellow); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(green, yellow); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(green, yellow); /* Standard syntax */
+}
+
+#grad2 {
+  height: 100px;
+  background: firebrick; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, firebrick, gold); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, firebrick, gold); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, firebrick, gold); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, firebrick, gold); /* Standard syntax */
+}
+
+#grad3 {
+  height: 100px;
+  background: purple; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, purple, gainsboro); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, purple, gainsboro); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, purple, gainsboro); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, purple, gainsboro); /* Standard syntax */
+}
+
+#grad4 {
+  height: 100px;
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(lightblue, maroon, green); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(lightblue, maroon, green); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(lightblue, maroon, green); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(lightblue, maroon, green); /* Standard syntax */
+}
+
+#grad5 {
+  height: 100px;
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1)); /*Fx 3.6-15*/
+  background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1)); /*Standard*/
+}
+
+#grad6 {
+  height: 100px;
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(red, yellow, green); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(red, yellow, green); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(red, yellow, green); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(red, yellow, green); /* Standard syntax */
+}
+
+#multipleimgbgr {
+  background-image: url(car.jpeg),url(bg1.jpg) ;
+  background-position: right top;
+  background-repeat: no-repeat, no-repeat;
+  padding: 15px;
+  height: 300px;
+}
+
+
+#roundedcorners1 {
+  border-radius: 25px;
+  background: maroon;
+  padding: 10px;
+  width: 200px;
+  height: 150px;
+  color:wheat;
+}
+
+#roundedcorners2 {
+  border-radius: 25px;
+  border: 2px solid indigo;
+  padding: 10px;
+  width: 200px;
+  height: 150px;
+}
+
+#roundedcorners3 {
+  border-radius: 25px;
+  background: url(bg1.jpg);
+  background-position: left top;
+  background-repeat: repeat;
+  padding: 10px;
+  width: 300px;
+  height: 250px;
+}
+
+
+#roundedcorners4 {
+  border-radius: 15px 50px 30px 250px;
+  background: green;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+
+#roundedcorners5 {
+  border-radius: 5px 50px 100px;
+  background: goldenrod;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+
+#roundedcorners6 {
+  border-radius: 5px 50px;
+  background: mediumvioletred;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}

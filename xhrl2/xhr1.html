@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>XHR Level 2 Example 1</title>
+  <script>
+    var html = "";
+
+    // create new XHR instance through the constructor
+    var client = new XMLHttpRequest();
+
+    // register the corresponding event handlers
+    client.onloadstart = onloadstarthandler;
+    client.onprogress = onprogresshandler;
+    client.onabort = onaborthandler;
+    client.onerror = onerrorhandler;
+    client.onload = onloadhandler;
+    client.ontimeout = ontimeouthandler;
+    client.onloadend = onloadendhandler;
+    client.onreadystatechange = onreadystatechangehandler;
+
+    // specify the http request method and the request URLs path
+    client.open("GET", "http://localhost:3000");
+
+    // send request
+    function sendRequest() {
+      client.send();
+    }
+
+    // abort request
+    function abortRequest() {
+      client.abort();
+    }
+
+    // event occured when the request starts
+    function onloadstarthandler(e) {
+      html += "onloadstart<br/>";
+      document.getElementById("divText").innerHTML = html;
+    }
+
+    // event occured while sending and loading data
+    function onprogresshandler(e) {
+      console.log(e);
+      html += "onprogress (" + parseInt(e.loaded / e.total * 100) + "%) <br/>";
+      document.getElementById("divText").innerHTML = html;
+    }
+
+    // event occured when the request has been abored
+    function onaborthandler(e) {
+      html += "onabort<br/>";
+      document.getElementById("divText").innerHTML = html;
+    }
+
+    // event occured when the request has failed
+    function onerrorhandler(e) {
+      html += "onerror<br/>";
+      document.getElementById("divText").innerHTML = html;
+    }
+
+    // event occured when the request has successfully completed
+    function onloadhandler(e) {
+      html += "onload<br/>";
+      document.getElementById("divText").innerHTML = html;
+    }
+
+    // event occured when the author specified timeout has passed before the request could complete
+    function ontimeouthandler(e) {
+      html += "ontimeout<br/>";
+      document.getElementById("divText").innerHTML = html;
+    }
+
+    // event occured when the request has completed (either in success or failure)
+    function onloadendhandler(e) {
+      html += "onloadend<br/>";
+      document.getElementById("divText").innerHTML = html;
+    }
+
+    // event occured when the readyState attribute changes at some seemingly arbitrary times for historical reasons
+    function onreadystatechangehandler(e) {
+      if (this.readyState == this.DONE) {
+        if (this.status == 200) {
+          console.log(this.responseText);
+          document.getElementById("response").innerHTML = '<h1>' + this.responseText + '</h1>';
+          return;
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+<h1>XHR tutorial</h1>
+<input type="button" value="Send XMLHttpRequest" onclick="sendRequest()"/>
+<input type="button" value="Abort Sending" onclick="abortRequest()"/>
+<div id="divText">
+</div>
+<fieldset>
+  <legend>Response</legend>
+  <div id="response"></div>
+</fieldset>
+</body>
+</html>

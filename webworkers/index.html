@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Webworkers</title>
+</head>
+<body>
+
+<p>Counter:
+  <output id="result">0</output>
+</p>
+<button onclick="startWorker()">Start Worker</button>
+<button onclick="stopWorker()">Stop Worker</button>
+<fieldset>
+  <legend>Error Details</legend>
+  <pre id="error"></pre>
+</fieldset>
+<script>
+  var w;
+
+  function startWorker() {
+    if (typeof(Worker) !== "undefined") {
+      if (typeof(w) == "undefined") {
+        w = new Worker("timer_worker.js");
+      }
+      w.onerror = function (err) {
+        document.getElementById("error").innerHTML = err.message
+      };
+      w.onmessage = function (event) {
+        document.getElementById("result").innerHTML = event.data;
+      };
+    } else {
+      document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
+    }
+  }
+
+  function stopWorker() {
+    w.terminate();
+    w = undefined;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>XHR Level 2 File Upload</title>
+</head>
+<script>
+  function uploadFileToServer(e) {
+    console.log(e)
+    e.preventDefault();
+    var filesToBeUploaded = document.getElementById("file");
+    var file = filesToBeUploaded.files[0];
+    var xhrObj = new XMLHttpRequest();
+    xhrObj.upload.addEventListener("loadstart", onLoadStart, false);
+    xhrObj.upload.addEventListener("progress", onProgress, false);
+    xhrObj.upload.addEventListener("load", onLoad, false);
+    xhrObj.open("POST", "http://localhost:3000/upload", true);
+    xhrObj.setRequestHeader("Content-type", file.type);
+    xhrObj.setRequestHeader("X_FILE_NAME", file.name);
+    xhrObj.send(file);
+  }
+
+  function onProgress(evt) {
+    var progressBar = document.getElementById("progressBar");
+    var percentageDiv = document.getElementById("percentageCalc");
+    if (evt.lengthComputable) {
+      progressBar.max = evt.total;
+      progressBar.value = evt.loaded;
+      percentageDiv.innerHTML = Math.round(evt.loaded / evt.total * 100) + "%";
+    }
+  }
+
+  function onLoadStart(evt) {
+
+  }
+
+  function onLoad(evt) {
+
+  }
+
+</script>
+<body>
+<form encType="multipart/form-data">
+  <input type="file" id="file">
+  <input type="submit" title="Upload" value="Upload" onsubmit="uploadFileToServer(e)"/>
+  <br/>
+  <br/>
+  <br/>
+  <label>Upload Progess:</label>
+  <progress id="progressBar">
+  </progress>
+  <div id="percentageCalc"></div>
+</form>
+</body>
+</html>

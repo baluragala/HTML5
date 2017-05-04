@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS3 Transformations</title>
+  <style>
+
+    /* The animation code */
+    @keyframes color-change {
+      from {
+        background-color: indigo;
+      }
+      to {
+        background-color: orangered;
+      }
+    }
+
+    /* The element to apply the animation to */
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: orangered;
+      animation-name: color-change;
+      animation-duration: 5s;
+    }
+
+    /* The animation code */
+    @keyframes step {
+      0%   {background-color: violet;}
+      20%  {background-color: indigo;}
+      40%  {background-color: blue;}
+      60% {background-color: yellow;}
+      80% {background-color: green;}
+      100% {background-color: olive;}
+    }
+
+    /* The element to apply the animation to */
+    .step {
+      margin: 20px;
+      width: 200px;
+      height: 200px;
+      background-color: gray;
+      animation-name: step;
+      animation-duration: 10s;
+    }
+
+
+    /* The animation code */
+    @keyframes move {
+      0%   {background-color:goldenrod; left:0px; top:0px;}
+      25%  {background-color:indigo; left:200px; top:0px;}
+      50%  {background-color:darkgreen; left:200px; top:200px;}
+      75%  {background-color:darkkhaki; left:0px; top:200px;}
+      100% {background-color:darkcyan; left:0px; top:0px;}
+    }
+
+    /* The element to apply the animation to */
+    .move {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      background-color: red;
+      animation-name: move;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="info">
+</div>
+
+<div class="step">
+</div>
+
+<div class="move">
+</div>
+
+
+</body>
+</html>
